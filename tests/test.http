@@ -1,0 +1,57 @@
+# run :RestSelectEnv .env.json
+### Get all tasks
+
+GET {{HOST}}/api/tasks
+
+### Create a new task
+
+POST {{HOST}}/api/tasks
+content-type: application/json
+
+{
+  "title": "New Task",
+  "completed": false
+}
+
+### Upsert a new task with no id
+PUT {{HOST}}/api/tasks
+content-type: application/json
+
+{
+  "title": "New Task updated",
+  "completed": false,
+  "description": "There is no description"
+}
+
+### Upsert a new task
+PUT {{HOST}}/api/tasks
+content-type: application/json
+
+{
+  "id" : 5,
+  "title": "New Task updated",
+  "completed": false,
+  "description": "There is no description"
+}
+
+DELETE {{HOST}}/api/tasks
+content-type: application/json
+
+{
+  "task_id" : 5
+}
+
+DELETE {{HOST}}/api/tasks
+content-type: application/json
+
+{
+  "id" : 5
+}
+
+DELETE {{HOST}}/api/tasks
+content-type: application/json
+
+{
+  "id" : 6
+}
+
